@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(212, 175, 55, 0.3);
+    color: #FFFFFF;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2A2A2A;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-bold
+           rounded-full transition-all duration-300
+           hover:shadow-gold hover:scale-[1.03] active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply border border-white/10 text-white font-medium rounded-full
+           transition-all duration-300
+           hover:bg-white/5 hover:border-white/25;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 text-gold text-sm font-semibold
+           tracking-[0.15em] uppercase mb-4;
+  }
+
+  .card-dark {
+    @apply bg-dark-card border border-dark-border rounded-2xl
+           transition-all duration-300 hover:border-gold/20;
+  }
+
+  .gold-divider {
+    @apply w-12 h-px bg-gold my-6;
+  }
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #E8C84A 50%, #B8941F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212,175,55,0.15) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
